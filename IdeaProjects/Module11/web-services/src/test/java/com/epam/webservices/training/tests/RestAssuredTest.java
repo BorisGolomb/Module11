@@ -2,6 +2,7 @@ package com.epam.webservices.training.tests;
 
 import static io.restassured.RestAssured.given;
 
+import com.epam.webservices.training.model.user.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -11,11 +12,11 @@ import com.epam.webservices.training.model.post.Post;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class RestAssuredDemoTest {
+public class RestAssuredTest {
 
 	@BeforeTest
 	public void initTest() {
-		RestAssured.baseURI = "https://jsonplaceholder.typicode.com/users";
+		RestAssured.baseURI = "https://jsonplaceholder.typicode.com/";
 	}
 	
 	@Test
@@ -35,8 +36,8 @@ public class RestAssuredDemoTest {
 	@Test
 	public void checkResponseBody() {
 		Response rp = given().get("/users").andReturn();
-		Post[] posts = rp.as(User[].class);
-		Assert.assertEquals(posts.length, 100);
+		User[] users = rp.as(User[].class);
+		Assert.assertEquals(users.length, 10);
 	}
 	
 }
