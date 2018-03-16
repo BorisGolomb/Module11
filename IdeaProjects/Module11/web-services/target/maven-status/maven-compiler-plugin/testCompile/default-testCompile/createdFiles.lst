@@ -1,0 +1,7 @@
+com/epam/webservices/training/model/post/Post.class
+com/epam/webservices/training/model/user/Company.class
+com/epam/webservices/training/model/user/Geo.class
+com/epam/webservices/training/model/user/Address.class
+com/epam/webservices/training/tests/RestAssuredDemoTest.class
+com/epam/webservices/training/tests/RestTemplDemoTest.class
+com/epam/webservices/training/model/user/User.class
