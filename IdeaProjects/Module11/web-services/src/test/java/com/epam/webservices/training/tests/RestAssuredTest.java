@@ -20,7 +20,7 @@ public class RestAssuredDemoTest {
 	
 	@Test
 	public void checkStatusCode1() {
-		Response rp = given().get("/posts").andReturn();	
+		Response rp = given().get("/users").andReturn();
 		int actualStatusCode = rp.getStatusCode();
 		System.out.println(actualStatusCode);
 		Assert.assertEquals(actualStatusCode, 200);
@@ -28,14 +28,14 @@ public class RestAssuredDemoTest {
 	
 	@Test
 	public void checkResponseHeader() {
-		Response rp = given().get("/posts").andReturn();	
+		Response rp = given().get("/users").andReturn();
 		String valueOfContentTypeHeader = rp.getHeader("content-type");
 		Assert.assertTrue(valueOfContentTypeHeader.contains("application/json"));
 	}
 	@Test
 	public void checkResponseBody() {
-		Response rp = given().get("/posts").andReturn();	
-		Post[] posts = rp.as(Post[].class);
+		Response rp = given().get("/users").andReturn();
+		Post[] posts = rp.as(User[].class);
 		Assert.assertEquals(posts.length, 100);
 	}
 	
